@@ -6,8 +6,11 @@ library(purrr)
 library(RColorBrewer)
 library(highcharter)
 
-Sys.setenv(SPOTIFY_CLIENT_ID = '45b7504fcc7d41de8c9c57783a28087b')
-Sys.setenv(SPOTIFY_CLIENT_SECRET = 'b372cca21b604722b8981e42fd6b4b77')
+readRDS('spotify_keys.rds') # two data objects SPOTIFY_CLIENT_ID
+# and SPOTIFY_CLIENT_SECRET used to access the spotifyR package.
+
+Sys.setenv(SPOTIFY_CLIENT_ID)
+Sys.setenv(SPOTIFY_CLIENT_SECRET)
 
 spotify_df <- get_artist_audio_features('bruce springsteen')
 
